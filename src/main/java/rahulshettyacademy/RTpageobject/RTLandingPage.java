@@ -39,6 +39,8 @@ public class RTLandingPage extends AbstractComponent{
 		JavascriptExecutor js=(JavascriptExecutor)driver;
 		js.executeScript("window.scroll(0,300)");
 		submit.click();
+		System.out.println(" You have succesfully logged in !!!");
+		System.out.println(" Please wait while we load the website ");
 		Thread.sleep(5000);
 		RTProductCatalogue productCatalogue=new RTProductCatalogue(driver);
 		return productCatalogue;
