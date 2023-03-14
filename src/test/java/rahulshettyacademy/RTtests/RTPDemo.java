@@ -43,6 +43,8 @@ public class RTPDemo {
 		driver.findElement(By.name("loginPassword")).sendKeys(pwd);
 		js.executeScript("window.scroll(0,300)");
 		driver.findElement(By.cssSelector(".cc-button-type-1.js-analytics-loginButton")).click();
+		System.out.println(" You have successfully logged in !!!!");
+		System.out.println(" Please wait while we load ");
 		Thread.sleep(5000);
 		// search items
 		driver.findElement(By.id("search-input-top-bar")).sendKeys(id);

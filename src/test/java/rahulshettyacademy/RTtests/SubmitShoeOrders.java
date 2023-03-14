@@ -33,6 +33,9 @@ public class SubmitShoeOrders {
 		RTCheckout checkOut=productCatalogue.goToCartPage();
 		checkOut.commonObjectCalling();
 		driver.close();
+		System.out.println("Need to implement BaseTest.java code 1st");
+		System.out.println("Need to implement tetsNg framework 2nd");
+		System.out.println("Need to implement Hashmap conept 3rd");
 	}
 }
 //		item1.commonObjectCalling(RTPItemsNeeded.driver, "5086343", "DARKGREY", "6");

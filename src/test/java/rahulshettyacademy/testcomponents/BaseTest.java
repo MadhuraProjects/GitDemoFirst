@@ -8,5 +8,5 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public class BaseTest {
 	WebDriverManager.chromedriver().setup();
 	WebDriver driver = new ChromeDriver(); 
-
+	
 }
