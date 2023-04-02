@@ -25,15 +25,21 @@ public class RTProductCatalogue extends AbstractComponent{
 	WebElement searchIcon;
 	@FindBy(xpath="//a[@class='link js-analytics-productClick']")
 	WebElement productIcon;
+	@FindBy(css="button[class='add-to-cart cc-button-type-1']")
+	WebElement addToCartButton;
+	@FindBy(css="button[class='add-to-wish-list cc-add-to-wish-list to-add']")
+	WebElement addToWishListButton;
+	@FindBy(css="button[class='remove-btn remove-from-wishlist cc-remove-from-wishlist btn btn-light']")
+	WebElement removeFromWishList;
 	
 	public void searchProduct(String id) throws InterruptedException
 	{
 		driver.findElement(By.id("search-input-top-bar")).sendKeys(id);
 		waitForElementToAppear(productBy);
 		searchIcon.click();
-		Thread.sleep(5000);
-		JavascriptExecutor js=(JavascriptExecutor)driver;
-		js.executeScript("window.scroll(0,500)");
+		Thread.sleep(3000);
+		//JavascriptExecutor js=(JavascriptExecutor)driver;
+		js.executeScript("window.scroll(0,300)");
 		productIcon.click();
 	}
 	
@@ -55,9 +61,35 @@ public class RTProductCatalogue extends AbstractComponent{
 	}
 	public void addToCart(String id) throws InterruptedException
 	{
-		driver.findElement(By.cssSelector(".add-to-cart.cc-button-type-1")).click();
+		//driver.findElement(By.cssSelector(".add-to-cart.cc-button-type-1")).click();
+		addToCartButton.click();
 		Thread.sleep(2000);
 		System.out.println("Your Item "+id+" is added to cart succesfully !!!");
+	}
+	public void addToWishList(String id) throws InterruptedException
+	{
+		js.executeScript("window.scroll(0,400)");
+		addToWishListButton.click();
+		Thread.sleep(2000);
+		//System.out.println("You item "+id+" is added to WishList successfully !!!" );
+	}
+	public void removeFromWishList(String id)
+	{
+		js.executeScript("window.scroll(0,300)");
+		removeFromWishList.click();
+		System.out.println("The element "+id+" is removed from wishlist!!!");
+		
+	}
+	public void commonWishList(WebDriver driver, String id, String colour, String size) throws InterruptedException 
+	{
+		searchProduct(id);
+		searchColour(colour,id);
+		searchSize(size,id);
+		addToWishList(id);
+		System.out.println("You item "+id+" of colour "+colour+" of size "+size+" is added to WishList successfully !!!" );
+		goToWishList();
+		Thread.sleep(1000);
+		removeFromWishList(id);
 	}
 	public void commonObjectCalling(WebDriver driver, String id, String colour, String size) throws InterruptedException
 	{

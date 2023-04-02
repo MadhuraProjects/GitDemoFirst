@@ -1,6 +1,7 @@
 package retailpackage.RTpageobject;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -27,13 +28,41 @@ public class RTCheckout extends AbstractComponent{
 	WebElement menuHeader;
 	@FindBy(xpath="//div[@class='cc-header-userMenu-container js-userSubMenu']/a[4]")
 	WebElement signOut;
+	@FindBy(css="input[id='ms']")
 	
+	WebElement radioButtonID;
+	@FindBy(id="shippingFirstNamedefault")
+	WebElement firstName;
+	@FindBy(id="shippingLastNamedefault")
+	WebElement lastName;
+	@FindBy(id="shippingAddressOnedefault")
+	WebElement myAddress;
+	@FindBy(id="shippingZipCodedefault")
+	WebElement myPin;
+	@FindBy(id="shippingAddressCitydefault")
+	WebElement myCity;
+	@FindBy(id="shippingStatedefault")
+	WebElement myState;
+
 	public void proceedToCheck() throws InterruptedException
 	{
 		proceedToCheck.click();
 		Thread.sleep(2000);
 	}
 	
+	public void personalDetails() throws InterruptedException
+	{
+		//JavascriptExecutor js=(JavascriptExecutor)driver;
+		js.executeScript("window.scroll(0,300)");
+		//radioButtonID.click();
+		firstName.sendKeys("Madhura");
+		lastName.sendKeys("Chatterjee");
+		myAddress.sendKeys("240 By 2 Dharmatala Road Budge Budge");
+		myPin.sendKeys("700137");
+		myCity.sendKeys("Kolkata");
+		myState.sendKeys("West Bengal");
+		Thread.sleep(1000);
+	}
 	public void proceedToPayment()
 	{
 		proceedToPayment.click();
@@ -57,6 +86,7 @@ public class RTCheckout extends AbstractComponent{
 	public void commonObjectCalling() throws InterruptedException
 	{
 		proceedToCheck();
+		personalDetails();
 		proceedToPayment();
 		remove();
 		signOut();

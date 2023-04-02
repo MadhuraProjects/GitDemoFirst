@@ -5,7 +5,9 @@
     <classes>
       <class name="retailpackage.RTtests.SubmitShoeOrders">
         <methods>
-          <include name="submitShoeOrder"/>
+          <include name="OrderHistoryTest"/>
+          <include name="tearDown"/>
+          <include name="launchApplication"/>
         </methods>
       </class> <!-- retailpackage.RTtests.SubmitShoeOrders -->
     </classes>
