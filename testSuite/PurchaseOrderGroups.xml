@@ -3,7 +3,7 @@
 <suite name="Suite">
 	<groups>
 		<run>
-			<include name="Purchase" />
+			<include name="MyWish" />
 		</run>
 	</groups>
   <test thread-count="5" name="Submit Order Test">

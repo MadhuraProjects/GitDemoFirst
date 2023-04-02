@@ -15,5 +15,6 @@ public class ErrorValidation extends BaseTest{
 		String password="MyBat";
 		RTProductCatalogue productCatalogue=landingPage.loginApplication(email,password);
 		Assert.assertEquals("Incorrect e-mail or password",landingPage.getErrorMessage());
+		System.out.println("The Error Validation Test is executed succesfully !!!");
 	}
 }
