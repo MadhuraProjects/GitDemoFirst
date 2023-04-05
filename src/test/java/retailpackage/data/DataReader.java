@@ -1,4 +1,4 @@
-package rahulshettyacademy.data;
+package retailpackage.data;
 
 import java.io.File;
 import java.io.IOException;

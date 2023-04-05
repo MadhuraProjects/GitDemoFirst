@@ -48,7 +48,7 @@ public class RTProductCatalogue extends AbstractComponent{
 		String colourXpath="//button[@data-value='"+colour+"']";
 		WebElement clr=driver.findElement(By.xpath(colourXpath));
 		clr.click();
-		System.out.println("The selected size for your shoe "+id+" is "+colour);
+		System.out.println("The selected colour for your shoe "+id+" is "+colour);
 		Thread.sleep(3000);
 	}
 	
