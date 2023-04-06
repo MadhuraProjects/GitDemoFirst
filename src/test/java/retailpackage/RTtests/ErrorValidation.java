@@ -16,5 +16,6 @@ public class ErrorValidation extends BaseTest{
 		RTProductCatalogue productCatalogue=landingPage.loginApplication(email,password);
 		Assert.assertEquals("Incorrect e-mail or password",landingPage.getErrorMessage());
 		System.out.println("The Error Validation Test is executed succesfully !!!");
+		System.out.println("This is a regular branch check !!!");
 	}
 }

@@ -46,6 +46,7 @@ public void wishListOrder(HashMap<String,String> input) throws InterruptedExcept
 	productCatalogue.commonWishList(driver, input.get("id"),input.get("colour"),input.get("size"));
 	RTCheckout checkOut=new RTCheckout(driver);
 	checkOut.signOut();
+	System.out.println(" This is a branch check wishlist !!!");
 	}
 	
 //	@Test
